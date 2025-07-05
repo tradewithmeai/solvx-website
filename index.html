@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SolVX - AI-Enhanced Crypto Research &amp; Blockchain Consulting | UK</title>
+<meta content="Get exclusive AI-generated crypto reports, blockchain consulting, and early access to cutting-edge trading tools. Expert analysis for UK businesses and investors." name="description"/>
+<meta content="crypto consulting, blockchain consulting UK, AI crypto analysis, cryptocurrency research, trading tools, crypto reports" name="keywords"/>
+<meta content="SolVX" name="author"/>
+<!-- Open Graph / Social Media -->
+<meta content="website" property="og:type"/>
+<meta content="SolVX - AI-Enhanced Crypto Research &amp; Blockchain Consulting" property="og:title"/>
+<meta content="Get exclusive AI-generated crypto reports and expert blockchain consulting for UK businesses." property="og:description"/>
+<meta content="https://solvx.uk" property="og:url"/>
+<meta content="SolVX" property="og:site_name"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="SolVX - AI-Enhanced Crypto Research" name="twitter:title"/>
+<meta content="Expert crypto analysis and blockchain consulting with AI-enhanced insights." name="twitter:description"/>
+<!-- Cache Control -->
+<meta content="no-cache, no-store, must-revalidate" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-H7TN38EH8G"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H7TN38EH8G');
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Satoshi:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* ========================================
+       1. CSS VARIABLES & GLOBAL STYLES
+       ======================================== */
+    :root {
+      --bg: #000a1a;
+      --text: #f1f1f1;
+      --accent: #00bfff;
+      --secondary: rgba(44,44,44,0.2);
+      --glass: blur(15px);
+      
+      /* Card backgrounds for different levels */
+      --card-level1-bg: rgba(15, 35, 55, 0.95);
+      --card-level2-bg: rgba(20, 40, 60, 0.95);
+      --card-level3-bg: rgba(25, 45, 65, 0.95);
+    }
+    
+    * { 
+      box-sizing: border-box; 
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Satoshi', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+    
+    /* Background texture */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    /* ========================================
+       2. LAYOUT COMPONENTS
+       ======================================== */
+    
+    /* Glass morphism containers */
+    header, section, footer {
+      background: var(--secondary);
+      backdrop-filter: var(--glass);
+      -webkit-backdrop-filter: var(--glass);
+      border: 1px solid var(--accent);
+      border-radius: 12px;
+      margin: 2rem;
+      padding: 2rem;
+      position: relative;
+    }
+    
+    header { 
+      text-align: center; 
+      overflow: hidden; 
+    }
+    
+    header img { 
+      width: 240px; 
+      position: relative; 
+      z-index: 1; 
+    }
+
+    /* ========================================
+       3. ANIMATED BANNER (ORB LAYERS)
+       ======================================== */
+    #crypto-banner { 
+      position: absolute; 
+      top:0; left:0; 
+      width:100%; height:100%; 
+      overflow:hidden; 
+      z-index:0; 
+    }
+    
+    .orb-layer { 
+      position:absolute; 
+      top:0; left:0; right:0; bottom:0; 
+      pointer-events:none; 
+    }
+    
+    /* Orb layer backgrounds */
+    .orb-layer.layer1::before,
+    .orb-layer.layer2::before,
+    .orb-layer.layer3::before {
+      content:''; 
+      position:absolute; 
+      top:0; left:0; right:0; bottom:0;
+      background-repeat: repeat; 
+      background-size: 100% 100%; 
+      mix-blend-mode: screen;
+    }
+    
+    /* Layer 1 - Closest/brightest orbs */
+    .orb-layer.layer1::before {
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(0,255,255,0.9) 0, transparent 20px),
+        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.6) 0, transparent 15px),
+        radial-gradient(circle at 80% 50%, rgba(0,255,255,0.8) 0, transparent 25px);
+      animation: drift1 4s infinite alternate; 
+      filter: blur(2px);
+    }
+    
+    /* Layer 2 - Middle orbs */
+    .orb-layer.layer2::before {
+      background-image:
+        radial-gradient(circle at 25% 30%, rgba(0,200,255,0.5) 0, transparent 15px),
+        radial-gradient(circle at 70% 60%, rgba(0,255,200,0.4) 0, transparent 10px),
+        radial-gradient(circle at 55% 90%, rgba(255,255,255,0.3) 0, transparent 12px);
+      animation: drift2 6s infinite alternate; 
+      filter: blur(6px);
+    }
+    
+    /* Layer 3 - Farthest/dimmest orbs */
+    .orb-layer.layer3::before {
+      background-image:
+        radial-gradient(circle at 30% 20%, rgba(0,100,255,0.2) 0, transparent 8px),
+        radial-gradient(circle at 60% 80%, rgba(0,255,255,0.15) 0, transparent 6px),
+        radial-gradient(circle at 80% 40%, rgba(255,255,255,0.1) 0, transparent 5px);
+      animation: drift3 10s infinite alternate; 
+      filter: blur(10px);
+    }
+    
+    /* Orb animations */
+    @keyframes drift1 {
+      0%   { transform: translate(0,0) scale(1); }
+      50%  { transform: translate(-3%,10%) scale(1.6); }
+      100% { transform: translate(-5%,15%) scale(1.4); }
+    }
+    
+    @keyframes drift2 {
+      0%   { transform: translate(0,0) scale(1); }
+      50%  { transform: translate(5%,-10%) scale(1.3); }
+      100% { transform: translate(8%,-12%) scale(1.2); }
+    }
+    
+    @keyframes drift3 {
+      0%   { transform: translate(0,0) scale(1); }
+      50%  { transform: translate(-3%,5%) scale(0.9); }
+      100% { transform: translate(-6%,8%) scale(0.8); }
+    }
+
+    /* ========================================
+       4. NAVIGATION
+       ======================================== */
+    nav {
+      position: sticky; 
+      top: 0;
+      background: rgba(10,10,10,0.6);
+      backdrop-filter: var(--glass);
+      -webkit-backdrop-filter: var(--glass);
+      border-bottom: 1px solid var(--accent);
+      padding: 0.5rem;
+      z-index: 2;
+    }
+
+    /* ========================================
+       5. PANELS GRID LAYOUT
+       ======================================== */
+    .panels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      position: relative;
+      z-index: 1;
+      overflow: visible;
+    }
+
+    /* ========================================
+       6. FLIP CARD SYSTEM - BASE STYLES
+       ======================================== */
+    .flip-card {
+      perspective: 1000px;
+      position: relative;
+      overflow: visible;
+      height: 250px;
+      transition: z-index 0s;
+    }
+    
+    .flip-card:hover {
+      z-index: 10; /* Bring to front on hover */
+    }
+    
+    .flip-card-inner {
+      width: 100%; 
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+      position: relative;
+    }
+    
+    /* Default hover action - rotate Y axis */
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    /* ========================================
+       7. FLIP CARD FACES - SHARED STYLES
+       ======================================== */
+    .flip-card-front, 
+    .flip-card-back, 
+    .flip-card-submenu, 
+    .flip-card-details, 
+    .flip-card-scambuster, 
+    .flip-card-education, 
+    .flip-card-consultation, 
+    .flip-card-social, 
+    .flip-card-trading, 
+    .flip-card-developer, 
+    .flip-card-game, 
+    .flip-card-devteam, 
+    .flip-card-lovable, 
+    .flip-card-betatest, 
+    .flip-card-reports-list {
+      position: absolute; 
+      top: 0; 
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      backface-visibility: hidden;
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center;
+      padding: 1rem;
+      transition: opacity 0.3s ease;
+    }
+
+    /* ========================================
+       8. FLIP CARD STATES - LEVEL 1 (FRONT/BACK)
+       ======================================== */
+    
+    /* Front face - always visible by default */
+    .flip-card-front {
+      background: var(--bg);
+      opacity: 1;
+    }
+
+    /* Back face - Level 1 menu */
+    .flip-card-back {
+      background: var(--card-level1-bg);
+      transform: rotateY(180deg);
+      opacity: 1;
+    }
+
+    /* ========================================
+       9. FLIP CARD STATES - LEVEL 2 & 3
+       ======================================== */
+    
+    /* All deeper level cards - hidden by default */
+    .flip-card-submenu, 
+    .flip-card-education, 
+    .flip-card-consultation, 
+    .flip-card-social, 
+    .flip-card-trading, 
+    .flip-card-developer, 
+    .flip-card-game, 
+    .flip-card-devteam, 
+    .flip-card-lovable, 
+    .flip-card-betatest {
+      background: var(--card-level2-bg);
+      transform: rotateY(180deg) rotateX(180deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Level 3 cards */
+    .flip-card-reports-list {
+      background: var(--card-level3-bg);
+      transform: rotateY(180deg) rotateX(180deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .flip-card-details, 
+    .flip-card-scambuster {
+      background: var(--card-level3-bg);
+      transform: rotateY(180deg) rotateX(180deg);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* ========================================
+       10. FLIP CARD CLASS MODIFIERS
+       These classes are added via JavaScript to show different menu levels
+       ======================================== */
+    
+    /* --- CONSULTATION PANEL STATES --- */
+    
+    /* Show Education submenu */
+    .flip-card.education .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.education .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.education .flip-card-education {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Show Consultation submenu */
+    .flip-card.consultation .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.consultation .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.consultation .flip-card-consultation {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* --- RESEARCH PANEL STATES --- */
+    
+    /* Show Reports submenu */
+    .flip-card.reports .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.reports .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.reports .flip-card-submenu {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Show Social submenu */
+    .flip-card.social .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.social .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.social .flip-card-social {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Show Trading submenu */
+    .flip-card.trading .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.trading .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.trading .flip-card-trading {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Show Developer submenu */
+    .flip-card.developer .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.developer .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.developer .flip-card-developer {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Show Reports List (Level 3) */
+    .flip-card.reports-list .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.reports-list .flip-card-back,
+    .flip-card.reports-list .flip-card-submenu,
+    .flip-card.reports-list .flip-card-social,
+    .flip-card.reports-list .flip-card-trading,
+    .flip-card.reports-list .flip-card-developer {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.reports-list .flip-card-reports-list {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* --- PLAYGROUND PANEL STATES --- */
+    
+    /* Show Game submenu */
+    .flip-card.game .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.game .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.game .flip-card-game {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Show Dev Team submenu */
+    .flip-card.devteam .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.devteam .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.devteam .flip-card-devteam {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Show Lovable submenu */
+    .flip-card.lovable .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.lovable .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.lovable .flip-card-lovable {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Show Beta Test submenu */
+    .flip-card.betatest .flip-card-inner {
+      transform: rotateY(180deg) rotateX(180deg);
+    }
+    .flip-card.betatest .flip-card-back {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .flip-card.betatest .flip-card-betatest {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ========================================
+       11. BUTTONS & INTERACTIVE ELEMENTS
+       ======================================== */
+    .flip-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .flip-options button {
+      padding: 0.5rem;
+      border: none;
+      background: var(--accent);
+      color: #000;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .flip-options button:hover {
+      background: #0099cc;
+      transform: translateY(-1px);
+    }
+
+    /* Disabled button styles */
+    .disabled-btn {
+      background: #333 !important;
+      color: #888 !important;
+      cursor: not-allowed !important;
+      opacity: 0.6 !important;
+      border: 1px solid #555 !important;
+    }
+
+    .disabled-btn:hover {
+      transform: none !important;
+      background: #333 !important;
+    }
+
+    /* ========================================
+       12. NEWSLETTER SECTION
+       ======================================== */
+    .newsletter {
+      text-align: center;
+      max-width: 900px;
+      margin: 2rem auto;
+      position: relative;
+      z-index: 0;
+      overflow: visible;
+    }
+    
+    .newsletter form {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .newsletter input {
+      padding: 0.5rem; 
+      border: 1px solid var(--accent);
+      border-radius: 5px; 
+      width: 250px;
+    }
+    
+    .newsletter button {
+      padding: 0.5rem 1rem; 
+      border: none;
+      background: var(--accent); 
+      color: #000;
+      border-radius: 5px; 
+      cursor: pointer;
+    }
+
+    /* ========================================
+       13. FOOTER
+       ======================================== */
+    footer { 
+      text-align: center; 
+    }
+  </style>
+</head>
+<body>
+<!-- HEADER SECTION -->
+<header>
+<!-- Animated background orbs -->
+<div id="crypto-banner">
+<div class="orb-layer layer1"></div>
+<div class="orb-layer layer2"></div>
+<div class="orb-layer layer3"></div>
+</div>
+<img alt="SolVX Logo" src="solvx_logo_text.png"/>
+<h1 style="margin: 1rem 0 0.5rem 0; font-size: 2rem;">Supporting Blockchain Development and AI Research</h1>
+<p style="margin: 0; color: var(--accent); font-size: 1.1rem;">SME business consulting | Expert Analysis | UK Based | Training and Education</p>
+</header>
+<!-- NAVIGATION BAR -->
+<nav>
+<div style="display: flex; justify-content: center; gap: 2rem; padding: 1rem;">
+<a href="#projects" style="color: var(--accent); text-decoration: none; font-weight: 700;">Services</a>
+<a href="#about" style="color: var(--text); text-decoration: none;">About</a>
+<a href="#newsletter" style="color: var(--text); text-decoration: none;">Join List</a>
+<a href="mailto:solutions@solvx.uk" style="color: var(--text); text-decoration: none;">Contact</a>
+</div>
+</nav>
+<!-- MAIN SERVICES SECTION -->
+<section id="projects">
+<h2 style="text-align: center; margin-bottom: 1rem; color: var(--accent);">Hover over cards or give them a little poke with your pinky</h2>
+<div class="panels">
+<!-- ===== CONSULTATION AND EDUCATION CARD ===== -->
+<div class="flip-card" id="pane-consultation">
+<div class="flip-card-inner">
+<!-- Front face -->
+<div class="flip-card-front">
+<h3>Consultation and Education</h3>
+</div>
+<!-- Level 1 menu -->
+<div class="flip-card-back">
+<div class="flip-options">
+<button id="btn-education">Education</button>
+<button id="btn-consultation">Consultation</button>
+</div>
+</div>
+<!-- Education submenu -->
+<div class="flip-card-education" id="ai-tutoring">
+<h3 style="margin: 0.2rem 0; color: var(--accent); font-size: 0.9rem;">Free 1 on 1 AI and Blockchain Tutoring</h3>
+<div class="flip-options"><button onclick="trackButtonClick('Book Free Lesson', 'CTA'); trackExternalLink('https://calendly.com/captain-solvx/ai-bespoke-training', 'Calendly - Free Lesson'); window.open('https://calendly.com/captain-solvx/ai-bespoke-training','_blank')">Book Free Lesson Now</button></div><p style="font-size: 0.7em; text-align: left; margin: 0.2rem 0;">✅ AI tools explained simply</p><p style="font-size: 0.7em; text-align: left; margin: 0.2rem 0;">✅ Real examples: ChatGPT, Midjourney, Notion AI</p><p style="font-size: 0.7em; text-align: left; margin: 0.2rem 0;">✅ Free 1‑on‑1 training for beginners &amp; micro businesses</p><p style="font-size: 0.7em; text-align: left; margin: 0.2rem 0;">✅ Build confidence with hands‑on sessions</p></div>
+<!-- Consultation submenu -->
+<div class="flip-card-consultation" id="business-consultation">
+<h3 style="margin: 0.2rem 0; color: var(--accent); font-size: 0.9rem;">Integrating AI into your small business workflow</h3>
+<p style="font-size: 0.675em; margin: 0.3rem 0; text-align: center;"><strong>Limited-Time Offer!</strong><br/>RRP £490 ➡️ Now just £49 for my first 5 customers!</p>
+<p style="font-size: 0.63em; margin: 0.3rem 0; text-align: left;">Includes:<br/>
+            ✅ Quick business survey<br/>
+            ✅ Personal consultation<br/>
+            ✅ Customised action plan<br/>
+            ✅ Ongoing mentoring</p>
+<div class="flip-options">
+<button onclick="trackButtonClick('Book Consultation', 'CTA'); trackExternalLink('https://calendly.com/captain-solvx/ai-bespoke-training', 'Calendly - Consultation'); window.open('https://calendly.com/captain-solvx/ai-bespoke-training','_blank')">Book Consultation Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== RESEARCH & TOOLS CARD ===== -->
+<div class="flip-card" id="pane-research">
+<div class="flip-card-inner">
+<!-- Front face -->
+<div class="flip-card-front">
+<h3>Research &amp; Tools</h3>
+</div>
+<!-- Level 1 menu -->
+<div class="flip-card-back">
+<div class="flip-options">
+<button id="btn-reports">Blockchain Reports</button>
+<button id="btn-social">Social Media Projects</button>
+<button id="btn-trading">Try our trading tools</button>
+<button id="btn-developer">Developer Resources</button>
+</div>
+</div>
+<!-- Reports submenu (Level 2) -->
+<div class="flip-card-submenu">
+<h3 style="margin: 0.2rem 0; font-size: 0.9rem; color: var(--accent);">Free Blockchain Reports</h3>
+<p style="font-size: 0.65em; margin: 0.3rem 0; text-align: center;">Full-length blockchain reports designed to keep information freely accessible. The initial reports are raw data—the soil from which our mighty crypto library grows. Soon, they'll evolve into clearly summarised, human-readable visual reports, guided by user feedback.</p>
+<p style="font-size: 0.6em; margin: 0.3rem 0; text-align: center; color: var(--accent);"><strong>Project Evolution:</strong> Newsletter subscribers will access exclusive visualisations and interactive reports.</p>
+<div class="flip-options">
+<button id="btn-access-reports">Access Free Reports</button>
+</div>
+</div>
+<!-- Reports list (Level 3) -->
+<div class="flip-card-reports-list">
+<h3 style="margin: 0.2rem 0; font-size: 0.9rem; color: var(--accent);">Available Reports</h3>
+<div class="flip-options">
+<button onclick="trackButtonClick('SUI Report', 'PDF View'); window.open('sui-report.pdf','_blank')">SUI Report</button>
+<button onclick="trackButtonClick('Solana Report', 'PDF View'); window.open('solana-report.pdf','_blank')">Solana Report</button>
+<button onclick="trackButtonClick('Cardano Report', 'PDF View'); window.open('cardano-report.pdf','_blank')">Cardano Report</button>
+<button onclick="trackButtonClick('Pi Network Report', 'PDF View'); window.open('Pi Network Full Report 220625.pdf','_blank')">Pi Network Report</button>
+</div>
+</div>
+<!-- Social Media submenu -->
+<div class="flip-card-social">
+<p style="font-size: 0.65em; text-align: left; margin-bottom: 0.5rem;">📌 @TradeWithMeAI:</p><ul style="font-size: 0.6em; margin: 0.2rem 0 0.5rem 1rem;"><li>Real trading tips, no hype</li><li>Experimental AI-driven strategies</li><li>Open research &amp; tool testing</li></ul><p style="font-size: 0.65em; text-align: left; margin-bottom: 0.5rem;">📌 @AIScamGuy:</p><ul style="font-size: 0.6em; margin: 0.2rem 0 0.5rem 1rem;"><li>Scam-busting investigations</li><li>OPSEC and digital security tips</li><li>Inspired ongoing research</li></ul><h3 style="margin: 0.2rem 0; font-size: 0.9rem; color: var(--accent);">Social Media Projects</h3>
+<div class="flip-options" style="margin-top: 0.5rem; flex-direction: row; gap: 0.3rem;">
+<button onclick="trackButtonClick('@TradeWithMeAI', 'Social Media'); trackExternalLink('https://x.com/TradeWithMeAI', 'Twitter - TradeWithMeAI'); window.open('https://x.com/TradeWithMeAI','_blank')" style="background: #1DA1F2; color: white; flex: 1;">@TradeWithMeAI</button>
+<button onclick="trackButtonClick('@AIScamGuy', 'Social Media'); trackExternalLink('https://x.com/AIScamGuy', 'Twitter - AIScamGuy'); window.open('https://x.com/AIScamGuy','_blank')" style="background: #1DA1F2; color: white; flex: 1;">@AIScamGuy</button>
+</div>
+</div>
+<!-- Trading Tools submenu -->
+<div class="flip-card-trading">
+<h3 style="margin: 0.2rem 0; font-size: 0.9rem; color: var(--accent);">Trading Tools in Development</h3>
+<p style="font-size: 0.65em; margin: 0.3rem 0; text-align: center;">Here you can try our trading tools for yourself, completely free. Currently available is the Concentric Crypto Ticker with live alerts. More tools and features are in active development, allowing traders clear insights across multiple assets and timeframes.</p>
+<p style="font-size: 0.6em; margin: 0.3rem 0; text-align: center; color: var(--accent);">An innovative alert app with an unseen price display. Still under development—users can comment, request features, and even contribute via a no-code/low-code interface.</p>
+<div class="flip-options" style="margin-top: 0.5rem;">
+<button onclick="trackButtonClick('Concentric Crypto Ticker', 'Trading Tools'); trackExternalLink('https://crypto-concentric-view.lovable.app', 'Crypto Ticker App'); window.open('https://crypto-concentric-view.lovable.app','_blank')">Concentric Crypto Ticker</button>
+</div>
+</div>
+<!-- Developer Resources submenu -->
+<div class="flip-card-developer" id="developer-resources">
+<h3 style="margin: 0.2rem 0; font-size: 0.9rem; color: var(--accent);">Developer Resources</h3>
+<p style="font-size: 0.7em; margin: 0.3rem 0; text-align: center;">Developer resources are currently in development and represent the final piece of this puzzle. Soon, we'll provide public GitHub repositories promoting learning and collaboration with a more code-oriented approach.</p>
+<div class="flip-options" style="margin-top: 0.5rem;">
+<button class="disabled-btn" disabled="">GitHub Repositories (Coming Soon)</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ===== THE PLAYGROUND CARD ===== -->
+<div class="flip-card" id="pane-playground">
+<div class="flip-card-inner">
+<!-- Front face -->
+<div class="flip-card-front">
+<h3>The Playground</h3>
+<p style="font-size: 0.8em; color: var(--accent);">Play leads to progress at SolVX</p>
+</div>
+<!-- Level 1 menu -->
+<div class="flip-card-back">
+<div class="flip-options">
+<button id="btn-game">Play Game of Strife</button>
+<button id="btn-devteam">Join Game DEV team</button>
+</div>
+</div>
+<!-- Game submenu -->
+<div class="flip-card-game">
+<img alt="Game of Strife Screenshot" src="game-screenshot.png" style="max-width:35%; border-radius:6px; margin-bottom:0.3rem;"/>
+<h3 style="margin: 0.2rem 0; font-size: 1rem;">Game of Strife</h3>
+<p style="font-size: 0.65em; margin: 0.1rem 0;">Simple rules creating complex systems.</p>
+<p style="font-size: 0.65em; margin: 0.1rem 0; color: var(--accent);">2-player bug battle to the death. With each game, it improves, learns, and one day will become the ultimate AI Bug Battler. Always wanted to make games? Join the Game Dev Team at SolVX—Limited places, No-Code skills required.</p>
+<p style="font-size: 0.6em; margin: 0.1rem 0; font-weight: bold; color: var(--accent);">It is evolving!</p>
+<div class="flip-options">
+<button onclick="trackButtonClick('Play Game Now', 'Game'); openGameTab()">Play Now</button>
+</div>
+</div>
+<!-- Dev Team submenu -->
+<div class="flip-card-devteam">
+<h3 style="margin: 0.2rem 0; font-size: 0.9rem; color: var(--accent);">Join Game DEV team</h3>
+<p style="font-size: 0.7em; margin: 0.3rem 0; text-align: center;">Currently developing mechanics via Lovable.Dev, an amazing service turning prompts into professional apps and games. Sign up free via our referral link below.</p>
+<p style="font-size: 0.65em; margin: 0.2rem 0; text-align: center;">
+<a href="https://link.solvx.uk/Lovable-SolVx-Game-Dev-10-Free-Credits" style="color: var(--accent);" target="_blank">https://link.solvx.uk/Lovable-SolVx-Game-Dev-10-Free-Credits</a>
+</p>
+<div class="flip-options">
+</div>
+<p style="font-size: 0.65em; margin: 0.3rem 0; text-align: center; color: var(--accent);">To join, just drop your email below.</p><form action="save-game-email.php" id="game-dev-email-form" method="post" style="text-align: center; margin-top: 0.5rem;"><input name="email" placeholder="Your email address" required="" style="padding: 0.4rem; border-radius: 4px; border: 1px solid var(--accent); width: 90%; max-width: 220px;" type="email"/><button style="margin-top: 0.3rem; padding: 0.4rem 1rem; border: none; background: var(--accent); color: #000; border-radius: 5px; cursor: pointer;" type="submit">Join Dev List</button></form></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT SECTION -->
+<section id="about" style="text-align: center;">
+<h2>About SolVX</h2>
+<p>SolVX offers clear, engaging AI and blockchain education, with a focus on practical learning for individuals and small businesses exploring emerging tech.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+<div>
+<h3 style="color: var(--accent);">Personalised Consulting</h3>
+<p>Tailored guidance to integrate AI into your business or personal workflow effectively.</p>
+</div>
+<div>
+<h3 style="color: var(--accent);">Education &amp; Training</h3>
+<p>Accessible training courses designed to simplify complex topics like blockchain and AI for all skill levels.</p>
+</div>
+<div>
+<h3 style="color: var(--accent);">Innovative Research</h3>
+<p>Ongoing projects focused on developing practical tools, detailed reports, and interactive resources for the crypto community.</p>
+</div>
+</div>
+<p style="margin-top: 2rem;">
+<strong>Contact:</strong>
+<a href="mailto:solutions@solvx.uk" style="color: var(--accent);">solutions@solvx.uk</a>
+</p>
+</section>
+<!-- NEWSLETTER SECTION -->
+<section class="newsletter" id="newsletter">
+<h2>Join the SolVX Inside Track</h2>
+<h3 style="color: var(--accent); margin: 0.5rem 0;">Exclusive AI-Enhanced Crypto Insights &amp; Early Access Tools</h3>
+<p><strong>Launching Soon</strong> – Join nearly 800 followers already on the list. Limited places left!</p>
+<ul style="text-align:left; display:inline-block; margin:0 auto; font-size:1em;">
+<li><strong>Membership:</strong> Gain access to free beta testing, development tools, and the Game Dev Group</li>
+<li><strong>Crypto Library:</strong> Access continuously updated blockchain reports and resources</li>
+<li><strong>Early Access:</strong> Test new AI and crypto tools before public release</li>
+<li><strong>Your Voice Matters:</strong> Guide our research and tool evolution with your feedback</li>
+<li><strong>Exclusive Content:</strong> Receive premium visual reports and insightful analyses</li>
+</ul>
+<p style="text-align:center; margin:1.2em 0 1em 0; color: var(--accent);">
+      Act fast—secure your place on the exclusive free Founders Plan today!
+    </p>
+<p style="text-align:center; margin:0 0 1em 0; font-size: 0.9em; color: #ccc;">
+<strong>Newsletter signup required for free sessions and content</strong>
+</p>
+<form id="email-form">
+<input id="email-input" placeholder="Your email address" required="" type="email"/>
+<button type="submit">Claim Your Free Spot</button>
+</form>
+<div id="email-status" style="margin-top: 1rem; color: var(--accent);"></div>
+</section>
+<!-- FOOTER -->
+<footer>
+<!-- SEO Site Map Navigation -->
+<div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0; padding-top: 2rem;">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: left; max-width: 1200px; margin: 0 auto;">
+<!-- Consultation & Education -->
+<div>
+<h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">Consultation &amp; Education</h4>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 0.3rem;">
+<a href="#ai-tutoring" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">
+                Free AI &amp; Blockchain Tutoring
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="#business-consultation" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">
+                Business AI Integration (£49 Offer)
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="https://calendly.com/captain-solvx/ai-bespoke-training" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                Book a Session ↗
+              </a>
+</li>
+</ul>
+</div>
+<!-- Research & Reports -->
+<div>
+<h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">Research &amp; Reports</h4>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 0.3rem;">
+<a href="sui-report.pdf" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                SUI Blockchain Report (PDF)
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="solana-report.pdf" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                Solana Analysis (PDF)
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="cardano-report.pdf" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                Cardano Report (PDF)
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="Pi Network Full Report 220625.pdf" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                Pi Network Analysis (PDF)
+              </a>
+</li>
+</ul>
+</div>
+<!-- Tools & Projects -->
+<div>
+<h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">Tools &amp; Projects</h4>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 0.3rem;">
+<a href="https://crypto-concentric-view.lovable.app" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                Concentric Crypto Ticker ↗
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="https://multi-game-dev.solvx.uk/" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                Game of Strife ↗
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="#developer-resources" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">
+                Developer Resources (Coming)
+              </a>
+</li>
+</ul>
+</div>
+<!-- Connect -->
+<div>
+<h4 style="color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem;">Connect</h4>
+<ul style="list-style: none; padding: 0; margin: 0;">
+<li style="margin-bottom: 0.3rem;">
+<a href="https://x.com/TradeWithMeAI" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                Twitter: @TradeWithMeAI ↗
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="https://x.com/AIScamGuy" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;" target="_blank">
+                Twitter: @AIScamGuy ↗
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="#newsletter" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">
+                Newsletter Signup
+              </a>
+</li>
+<li style="margin-bottom: 0.3rem;">
+<a href="mailto:solutions@solvx.uk" onmouseout="this.style.color='#888'" onmouseover="this.style.color='var(--accent)'" style="color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">
+                Email: solutions@solvx.uk
+              </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Original footer content -->
+<div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+<p>© 2025 SolVX. All rights reserved. | 
+      <a href="mailto:solutions@solvx.uk" style="color: var(--accent);">Contact</a> | 
+      <a href="#" style="color: var(--accent);">Privacy Policy</a> | 
+      <a href="#" style="color: var(--accent);">Terms</a></p>
+<p style="margin-top: 0.5rem; font-size: 0.9rem; color: #888;">
+        Professional crypto consulting and AI-enhanced research services in the UK
+      </p>
+</div>
+</footer>
+<script>
+    /* ========================================
+       JAVASCRIPT - ORGANIZED BY FUNCTIONALITY
+       ======================================== */
+    
+    // ===== 0. GOOGLE ANALYTICS EVENT TRACKING FUNCTIONS =====
+    
+    // Function to track button clicks
+    function trackButtonClick(buttonName, category = 'Button Click') {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          'event_category': category,
+          'event_label': buttonName
+        });
+      }
+    }
+    
+    // Function to track form submissions
+    function trackFormSubmission(formName) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'form_submit', {
+          'event_category': 'Form',
+          'event_label': formName
+        });
+      }
+    }
+    
+    // Function to track external link clicks
+    function trackExternalLink(url, linkName) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          'event_category': 'External Link',
+          'event_label': linkName || url
+        });
+      }
+    }
+    
+    // ===== 1. EMAIL FORM HANDLING =====
+    document.getElementById('email-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email-input').value;
+      const statusDiv = document.getElementById('email-status');
+      
+      // Track form submission
+      trackFormSubmission('Newsletter Signup');
+      
+      // Show loading message
+      statusDiv.textContent = 'Saving email...';
+      
+      // Send to backend
+      fetch('save-email.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'email=' + encodeURIComponent(email)
+      })
+      .then(response => response.text())
+      .then(data => {
+        if (data.trim() === 'success') {
+          statusDiv.textContent = 'Thanks! Email saved successfully.';
+          document.getElementById('email-input').value = '';
+        } else {
+          statusDiv.textContent = 'Error saving email. Please try again.';
+        }
+      })
+      .catch(error => {
+        statusDiv.textContent = 'Error saving email. Please try again.';
+        console.error('Error:', error);
+      });
+    });
+
+    // ===== 2. UTILITY FUNCTIONS =====
+    
+    // Function to open game in new tab
+    function openGameTab() {
+      trackExternalLink('https://multi-game-dev.solvx.uk/', 'Game of Strife');
+      const gameWindow = window.open('https://multi-game-dev.solvx.uk/', '_blank');
+      gameWindow.focus();
+    }
+    
+    // Function to clear all submenu states from a card
+    function clearCardStates(card) {
+      // Remove all possible state classes
+      card.classList.remove(
+        'education', 'consultation', 'reports', 'social', 
+        'trading', 'developer', 'reports-list', 'game', 
+        'devteam'
+      );
+    }
+
+    // ===== 3. CONSULTATION PANEL NAVIGATION =====
+    const consultationPane = document.getElementById('pane-consultation');
+    
+    // Reset on mouse leave
+    consultationPane.addEventListener('mouseleave', e => {
+      clearCardStates(consultationPane);
+    });
+    
+    // Education button
+    document.getElementById('btn-education').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Education Menu', 'Navigation');
+      clearCardStates(consultationPane);
+      consultationPane.classList.add('education');
+    });
+    
+    // Consultation button
+    document.getElementById('btn-consultation').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Consultation Menu', 'Navigation');
+      clearCardStates(consultationPane);
+      consultationPane.classList.add('consultation');
+    });
+
+    // ===== 4. RESEARCH PANEL NAVIGATION =====
+    const researchPane = document.getElementById('pane-research');
+    
+    // Reset on mouse leave
+    researchPane.addEventListener('mouseleave', e => {
+      clearCardStates(researchPane);
+    });
+    
+    // Blockchain Reports button
+    document.getElementById('btn-reports').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Blockchain Reports', 'Navigation');
+      clearCardStates(researchPane);
+      researchPane.classList.add('reports');
+    });
+    
+    // Social Media button
+    document.getElementById('btn-social').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Social Media Projects', 'Navigation');
+      clearCardStates(researchPane);
+      researchPane.classList.add('social');
+    });
+    
+    // Trading Tools button
+    document.getElementById('btn-trading').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Trading Tools', 'Navigation');
+      clearCardStates(researchPane);
+      researchPane.classList.add('trading');
+    });
+    
+    // Developer Resources button
+    document.getElementById('btn-developer').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Developer Resources', 'Navigation');
+      clearCardStates(researchPane);
+      researchPane.classList.add('developer');
+    });
+    
+    // Access Free Reports button (Level 3 navigation)
+    document.getElementById('btn-access-reports').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Access Free Reports', 'Navigation');
+      clearCardStates(researchPane);
+      researchPane.classList.add('reports-list');
+    });
+
+    // ===== 5. PLAYGROUND PANEL NAVIGATION =====
+    const playgroundPane = document.getElementById('pane-playground');
+    
+    // Reset on mouse leave
+    playgroundPane.addEventListener('mouseleave', e => {
+      clearCardStates(playgroundPane);
+    });
+    
+    // Game button
+    document.getElementById('btn-game').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Play Game of Strife', 'Navigation');
+      clearCardStates(playgroundPane);
+      playgroundPane.classList.add('game');
+    });
+    
+    // Dev Team button
+    document.getElementById('btn-devteam').addEventListener('click', e => {
+      e.stopPropagation();
+      trackButtonClick('Join Game DEV Team', 'Navigation');
+      clearCardStates(playgroundPane);
+      playgroundPane.classList.add('devteam');
+    });
+    
+    // ===== 6. DEBUG MODE (Remove in production) =====
+    // Uncomment the following lines to see console logs for debugging
+    /*
+    console.log('SolVX website loaded');
+    console.log('Flip cards initialized:', document.querySelectorAll('.flip-card').length);
+    */
+    
+    // ===== 7. TRACK ALL MAILTO LINKS =====
+    // Add tracking to all mailto links on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
+      mailtoLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          const email = this.href.replace('mailto:', '');
+          trackButtonClick(`Email: ${email}`, 'Contact');
+        });
+      });
+    });
+  </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('game-dev-email-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = form.querySelector('input[name="email"]').value;
+      fetch('save-game-email.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'email=' + encodeURIComponent(email)
+      })
+      .then(response => response.text())
+      .then(data => {
+        if (data.trim() === 'success') {
+          alert('Thanks! You’re now on the Game Dev email list.');
+          form.reset();
+        } else {
+          alert('There was a problem saving your email. Please try again.');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error saving email.');
+      });
+    });
+  }
+});
+</script></body>
+</html>
